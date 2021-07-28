@@ -45,31 +45,6 @@ def demo(screen):
               start_frame=70),
     ]
     scenes.append(Scene(effects, 100))
-
-    text = Figlet(font="banner", width=200).renderText("ASCIIMATICS")
-    width = max([len(x) for x in text.split("\n")])
-
-    effects = [
-        Print(screen,
-              Fire(screen.height, 80, text, 0.4, 40, screen.colours),
-              0,
-              speed=1,
-              transparent=False),
-        Print(screen,
-              FigletText("ASCIIMATICS", "banner"),
-              screen.height - 9, x=(screen.width - width) // 2 + 1,
-              colour=Screen.COLOUR_BLACK,
-              bg=Screen.COLOUR_BLACK,
-              speed=1),
-        Print(screen,
-              FigletText("ASCIIMATICS", "banner"),
-              screen.height - 9,
-              colour=Screen.COLOUR_WHITE,
-              bg=Screen.COLOUR_WHITE,
-              speed=1),
-    ]
-    scenes.append(Scene(effects, -1))
-
     screen.play(scenes, stop_on_resize=True)
 
 
